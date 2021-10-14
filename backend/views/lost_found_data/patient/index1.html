@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome to Firebase Hosting</title>
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/7.6.2/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/7.6.2/firebase-auth.js"></script>
+    <script defer src="/__/firebase/7.6.2/firebase-database.js"></script>
+    <script defer src="/__/firebase/7.6.2/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/7.6.2/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
+    crossorigin="anonymous">
+    <style>
+      html{
+        height:100%;
+      }
+      body {
+            background-color:rgb(239, 247, 215);
+            border:2px solid rgb(187, 66, 10);
+            margin:6px;
+            height:98%;
+            background-size: contain;
+            
+          }
+        h3{
+            color: rgb(197, 26, 26);
+        }
+  </style>
+  </head>
+  <body>
+    <div class="container">
+        <div class="text-center">
+            <h3>Welcome Patient</h3>
+        </div>
+        <div class="offset-md-3 card" style="width:40rem ;">
+          <div class="card-header bg-primary text-light">
+            Name
+          </div>
+          <ul class="list-group list-group-flush" id="mylist1">
+             
+          </ul>
+       </div>
+        <br ><br>
+        <div class="offset-md-3 card" style="width:40rem ;">
+         <div class="card-header bg-primary text-light">
+            Age
+          </div>
+          <ul class="list-group list-group-flush" id="mylist2">
+            
+          </ul>
+        </div>
+        <br ><br>
+        <div class="offset-md-3 card" style="width:40rem ;">
+          <div class="card-header bg-primary text-light">
+            Gender
+          </div>
+          <ul class="list-group list-group-flush" id="mylist3">
+            
+          </ul>
+        </div>
+      <br ><br>
+      <div class="offset-md-3 card" style="width:40rem ;">
+        <div class="card-header bg-primary text-light">
+          Symptoms
+        </div>
+        <ol class="list-group list-group-flush" id="mylist4">
+          
+        </ol>
+      </div>
+      <br ><br>
+      <div class="offset-md-3 card" style="width:40rem ;">
+        <div class="card-header bg-primary text-light">
+          Disease
+        </div>
+        <ul class="list-group list-group-flush" id="mylist5">
+          
+        </ul>
+      </div>
+      <br><br>
+      <div class="offset-md-3 card" style="width:40rem ;">
+        <div class="card-header bg-primary text-light">
+          Medication
+        </div>
+        <ul class="list-group list-group-flush" id="mylist6">
+
+        </ul>
+      </div>
+      <br ><br>
+      <div class="offset-md-3 card" style="width:40rem ;">
+        <div class="card-header bg-primary text-light">
+          Advise
+        </div>
+        <ul class="list-group list-group-flush" id="mylist7">
+          
+        </ul>
+      </div>
+      <BR><BR>
+        <div class="offset-md-3">
+          <div class="row">
+            <div class="col-md-8">
+              <button onclick="genpdf();" class="btn-success text-light">Generate PDF</button>
+            </div>
+            <div class="col-md-4">
+              <button class="btn-danger"><a href="../index.html" class="text-light">Go back</a></button>
+            </div>
+          </div>
+        </div>
+    
+      <div id="mypdf">
+        <!-- <ul id="l0"></ul> -->
+        <ul id="l1"></ul>
+        <ul id="l2"></ul>
+        <ul id="l3"></ul>
+        <ul id="l4"></ul>
+        <ul id="l5"></ul>
+        <ul id="l6"></ul>
+        <ul id="l7"></ul>
+      </div>
+  </div>
+      
+  </body>
+  <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+  <script src="app.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" 
+          integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" 
+          crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.js"></script>
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</html>

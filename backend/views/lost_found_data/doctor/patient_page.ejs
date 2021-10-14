@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/lost_found_data/doctor/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-database.js"></script>
+    <title>Profile_Data</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #348fd9; border-bottom: 1px solid black;" >
+        <a class="navbar-brand" href="https://www.dtu.ac.in"><img src="../homepage/images/dtu_logo.png" style="height: 50px;"></a> 
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+            <a class="nav-link" href="/doctor_page"> Home </a>
+            </li> 
+        </ul>
+            <button id="demo" class="btn btn-dark" type="submit">Logout</button>  
+        </div>
+    </nav>
+
+    <div class="page-content page-container" id="page-content">
+        <div class="padding">
+            <div class="row container d-flex justify-content-center">
+                    <div class="card user-card-full">
+                        <div class="row m-l-0 m-r-0">
+                            <div class="col-sm-4 bg-c-lite-green user-profile">
+                                <div class="card-block text-center text-white">
+                                    <div class="m-b-25"> <img src="https://img.icons8.com/bubbles/100/000000/user.png" class="img-radius" alt="User-Profile-Image"> </div>
+                                    <h6 class="f-w-600"><%=name%></h6>
+                                    <p>Stay Safe, Stay Healthy</p> <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="card-block">
+                                    <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Contact Information</h6>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <p class="m-b-10 f-w-600">Email</p>
+                                            <h6 class="text-muted f-w-400"><%=email%></h6>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <p class="m-b-10 f-w-600">Phone</p>
+                                            <h6 class="text-muted f-w-400"><%=phone%></h6>
+                                        </div>
+                                    </div>
+                                    <h6 class="m-b-20 m-t-40 p-b-5 b-b-default f-w-600">About</h6>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <p class="m-b-10 f-w-600">Age</p>
+                                            <h6 class="text-muted f-w-400"><%=Age%> Yrs.</h6>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <p class="m-b-10 f-w-600">Blood Group</p>
+                                            <h6 class="text-muted f-w-400"><%=BloodGroup%></h6>
+                                        </div>
+                                    </div>
+                                    <div class ="row" style="margin-top: 3%;">
+                                        <div class="col-sm-6">
+                                            <p class="m-b-10 f-w-600">Weight</p>
+                                            <h6 class="text-muted f-w-400"><%=Weight%> Kg</h6>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <p class="m-b-10 f-w-600">Height</p>
+                                            <h6 class="text-muted f-w-400"><%=Height%> cm</h6>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6" style="position: relative; margin: auto; margin-top: 3%;">
+                                        <p class="m-b-10 f-w-600">Record Prescription: </p>
+                                        <!-- <h6 class="text-muted f-w-400">Record</h6> -->
+                                        <div id="controls">
+                                            <button id="recordbtn" class="btn btn-danger" onclick = "Rec()">Record</button>
+                                            <button id="pausebtn" class ="btn btn-danger" disabled onclick = "Pause()">Pause</button>
+                                            <button id="stopbtn" class = "btn btn-danger" disabled onclick = "Stop()">Stop</button>
+                                         </div>
+                                         <br>
+                                        <div class="row justify-content-md-center">  
+                                        <ul id="list">
+                                
+                                        </ul>
+                                        </div>
+                                        <br>
+                                        </div>
+                                    
+                                        <div class="loader-wrapper">
+                                            <span class="loader"><span class="loader-inner"></span></span>
+                                        </div> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- JavaScript -->
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src='/lost_found_data/doctor/js/jQuEry.js'></script>
+    <script src="/lost_found_data/doctor/js/app.js"></script>
+    <script src='/lost_found_data/doctor/js/script.js'></script>
+    
+
+    <!-- Optional JavaScript -->
+
+    
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-analytics.js"></script>
+
+
+
+</body>
+</html>

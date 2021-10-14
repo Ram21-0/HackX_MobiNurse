@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://smtpjs.com/v3/smtp.js"> </script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/lost_found_data/doctor/style_doctor/style.css">
+
+    <title>Homepage</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #348fd9; border-bottom: 1px solid black;" >
+            <button id="demo" class="btn btn-dark" type="submit">Logout</button>  
+    </nav>
+     
+    <div class="center">
+
+        <h3 style="margin-top: 2%;">Welcome, Doctor</h3>
+        
+    </div>
+    <div id="main-container">
+
+    </div> 
+      
+      
+
+    <!--JavaScript -->
+    <script>
+        var bookings = <%-JSON.stringify(booking)%> ;
+        console.log(bookings);
+        var html = '<table class="table table-hover">';
+        html += '<thead><tr><th scope="col">#</th><th scope="col">Patient Name</th><th scope="col">Date</th><th scope="col">Time</th><th scope="col">Reason</th><th scope="col">Appointment Link</th><th scope="col">Prescription</th></tr></thead>';
+        html += '<tbody>';
+        for(var i = bookings.length-1; i >= 0; i--){
+        html += '<tr>';
+        html += '<th scope="row">' + (bookings.length - i) + '</th>';
+        html += '<td>' + bookings[i].patientName + '</td>';
+        html += '<td>' + bookings[i].Date + '</td>';
+        html += '<td>' + bookings[i].Time + '</td>';
+        html += '<td>' + bookings[i].subject + '</td>';
+        html += '<td><a href = "' + bookings[i].meetLink + '" target = "_blank">Link</a></td>';
+        html += '<td><a href="/patient_page">Link</a></td>';
+        html += '</tr>';
+        }
+        html += '</tbody>';
+        html += '</table>';
+        console.log(html);
+        document.getElementById("main-container").innerHTML = html;
+    </script>
+    <script src="/lost_found_data/doctor/js_doctor/scripts.js"></script>
+    <script src='/lost_found_data/doctor/js_doctor/jQuEry.js'></script>
+
+
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

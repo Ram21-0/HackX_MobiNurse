@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <style type="text/css">
+        
+        .nav-item:hover {
+            border-bottom: 3px solid black;
+        }
+        body{
+            font-family: 'Lato', sans-serif;
+            width: 100%;
+            background-color: #fdf5ef;
+        }
+        #container {
+            border-bottom: 2px black solid;
+            position: relative;
+            margin: 0 auto;
+            width: 80%;
+            margin: 5%;
+        }
+        .center {
+            text-align: center;
+        }
+        #main-container {
+            margin: 0 7%;
+            width: 86%;
+            display: inline-block;
+            text-align: center;
+        }
+        .card {
+            margin: 1%;
+            position: relative;
+            display: inline-block;
+        }
+        .card-title{
+            margin: 0px;
+            border-left: 1px solid grey;
+            border-right: 1px solid grey;
+            background-color: #E3F2FD;
+        }
+        .card-text {
+            text-align: center;
+            border-left: 1px solid grey;
+            border-right: 1px solid grey;
+            border-bottom: 1px solid grey;
+            background-color: #E3F2FD;
+            text-align: left;
+            padding: 4px;
+        }
+        .card-header {
+            padding: 2px 2px;
+            background-color:black;
+        }
+        .card-img-top {
+            height: 175px;
+        }
+    </style>
+    <title>Lost and Found</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #348fd9; border-bottom: 1px solid black;" >
+        <a class="navbar-brand" href="https://www.dtu.ac.in"><img src="../homepage/images/dtu_logo.png" style="height: 50px;"></a> 
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+            <a class="nav-link" href="/homepage"> Home </a>
+            </li>
+            <li class="nav-item active">
+            <a class="nav-link" href="/bookappointment"> Book Appointment </a>
+            </li>
+            <li class="nav-item active">
+            <a class="nav-link" href="/viewappointments">View Appointments</a>
+            </li>
+            <li class="nav-item active">
+            <a class="nav-link" href="/medicaltips"> Medical Tips </a>
+            </li> 
+            <li class="nav-item active">
+              <a class="nav-link" href="/store"> Medicine Store </a>
+              </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/profile"> Profile </a>
+            </li>  
+        </ul>
+            <button id="demo" class="btn btn-dark" type="submit">Logout</button>  
+        </div>
+    </nav>
+    <div style="text-align: center">
+       <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">Your Appointments</h1>
+            </div>
+        </div>   
+        <div id="main-container"></div> 
+    </div>
+
+    
+    
+      
+    <!-- Javascript -->
+    <script>
+        var x = document.getElementById("demo").addEventListener('click',myFunction);
+        function myFunction(){
+
+            location.href = '/logout';
+        }
+    </script>
+    <script type='text/javascript'> 
+        var bookings = <%-JSON.stringify(booking)%> ;
+        console.log(bookings);
+        var html = '<table class="table table-hover">';
+        html += '<thead><tr><th scope="col">#</th><th scope="col">Doctor Name</th><th scope="col">Date</th><th scope="col">Time</th><th scope="col">Reason</th><th scope="col">Appointment Link</th></tr></thead>';
+        html += '<tbody>';
+        for(var i = bookings.length-1; i >= 0; i--){
+            html += '<tr>';
+            html += '<th scope="row">' + (bookings.length - i) + '</th>';
+            html += '<td>Dr. ' + bookings[i].doctorName + '</td>';
+            html += '<td>' + bookings[i].Date + '</td>';
+            html += '<td>' + bookings[i].Time + '</td>';
+            html += '<td>' + bookings[i].subject + '</td>';
+            html += '<td><a href = "' + bookings[i].meetLink + '" target = "_blank">Link</a></td>';
+            html += '</tr>';
+        }
+        html += '</tbody>';
+        html += '</table>';
+        console.log(html);
+        document.getElementById("main-container").innerHTML = html;
+        </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

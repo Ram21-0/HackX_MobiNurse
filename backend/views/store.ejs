@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdxz6hlKdSYrNdG4D_fTZW344lIbxBM_o&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script>
+    <style type="text/css">
+      /* Set the size of the div element that contains the map */
+      body{
+        font-family: 'Lato', sans-serif;
+        background-color: #fdf5ef;
+      }
+      #map {
+        height: 82vh;
+        /* The height is 400 pixels */
+        width: 100%;
+        /* The width is the width of the web page */
+      }
+      .nav-item:hover {
+            border-bottom: 3px solid black;
+        }
+        .center {
+  text-align: center;
+}
+    </style>
+    
+    <title>Medical Store</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #348fd9; border-bottom: 1px solid black;" >
+      <a class="navbar-brand" href="https://www.dtu.ac.in"><img src="../homepage/images/dtu_logo.png" style="height: 50px;"></a> 
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      
+      <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+          <a class="nav-link" href="/homepage"> Home </a>
+          </li>
+          <li class="nav-item active">
+          <a class="nav-link" href="/bookappointment"> Book Appointment </a>
+          </li>
+          <li class="nav-item active">
+          <a class="nav-link" href="/viewappointments">View Appointments</a>
+          </li>
+          <li class="nav-item active">
+          <a class="nav-link" href="/medicaltips"> Medical Tips </a>
+          </li> 
+          <li class="nav-item active">
+            <a class="nav-link" href="/store"> Medicine Store </a>
+            </li>
+          <li class="nav-item active">
+              <a class="nav-link" href="/profile"> Profile </a>
+          </li>  
+      </ul>
+          <button id="demo" class="btn btn-dark" type="submit">Logout</button>  
+      </div>
+  </nav>
+     
+  <div style="text-align: center">
+    <div class="jumbotron jumbotron-fluid">
+         <div class="container">
+             <h1 class="display-1">COMING SOON</h1>
+         </div>
+     </div>   
+     <div id="main-container"></div> 
+  </div>
+ </div>
+     
+      
+      
+
+    <!--JavaScript -->
+    <script>
+      var x = document.getElementById("demo").addEventListener('click',myFunction);
+          function myFunction(){
+  
+              location.href = '/logout';
+          }
+  
+      document.getElementById("submit").addEventListener('click',sendMail);
+      function sendMail(event){
+  
+      }
+    </script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

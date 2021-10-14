@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Patient</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="/lost_found_data/patient/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="text-center">
+            <h3 id="welcome"></h3>
+        </div>
+        <div class="offset-md-3 card" style="width:40rem ;">
+          <div class="card-header bg-primary text-light">
+            Name
+          </div>
+          <ul class="list-group list-group-flush" id="mylist1">
+             
+          </ul>
+       </div>
+        <br ><br>
+        <div class="offset-md-3 card" style="width:40rem ;">
+         <div class="card-header bg-primary text-light">
+            Age
+          </div>
+          <ul class="list-group list-group-flush" id="mylist2">
+            
+          </ul>
+        </div>
+        <br ><br>
+        <div class="offset-md-3 card" style="width:40rem ;">
+          <div class="card-header bg-primary text-light">
+            Gender
+          </div>
+          <ul class="list-group list-group-flush" id="mylist3">
+            
+          </ul>
+        </div>
+      <br ><br>
+      <div class="offset-md-3 card" style="width:40rem ;">
+        <div class="card-header bg-primary text-light">
+          Symptoms
+        </div>
+        <ol class="list-group list-group-flush" id="mylist4">
+          
+        </ol>
+      </div>
+      <br ><br>
+      <div class="offset-md-3 card" style="width:40rem ;">
+        <div class="card-header bg-primary text-light">
+          Disease
+        </div>
+        <ul class="list-group list-group-flush" id="mylist5">
+          
+        </ul>
+      </div>
+      <br><br>
+      <div class="offset-md-3 card" style="width:40rem ;">
+        <div class="card-header bg-primary text-light">
+          Medication
+        </div>
+        <ul class="list-group list-group-flush" id="mylist6">
+
+        </ul>
+      </div>
+      <br ><br>
+      <div class="offset-md-3 card" style="width:40rem ;">
+        <div class="card-header bg-primary text-light">
+          Advise
+        </div>
+        <ul class="list-group list-group-flush" id="mylist7">
+          
+        </ul>
+      </div>
+    <!-- </div> -->
+    <br>
+      <div id="#gen">
+        <div class="row">
+          <div class="col-md-2 offset-md-4" style="margin: auto;">
+            <button onclick="genpdf();" class="btn-success text-light">Generate PDF</button>
+          </div>
+        </div>
+      </div>
+
+
+    <div id="mypdf">
+      <!-- <ul id="l0"></ul> -->
+      <!-- <img id="sign" src="../Patient_fb_placeholder.png"> -->
+      <ul id="l1"></ul>
+      <ul id="l2"></ul>
+      <ul id="l3"></ul>
+      <ul id="l4"></ul>
+      <ul id="l5"></ul>
+      <ul id="l6"></ul>
+      <ul id="l7"></ul>
+    </div>
+
+    <div class="loader-wrapper">
+        <span class="loader"><span class="loader-inner"></span></span>
+    </div> 
+    </div>
+</body>
+<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-storage.js"></script>
+<script src="/lost_found_data/patient/app.js"></script>
+<script src="/lost_found_data/patient/jQuEry.js"></script>
+<script src="/lost_found_data/patient/script.js"></script>
+</html>

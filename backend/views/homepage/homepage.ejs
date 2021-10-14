@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://smtpjs.com/v3/smtp.js"> </script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Homepage</title>
+    <style>
+        body{
+            font-family: 'Lato', sans-serif;
+            width: 100%;
+            background-color: #348fd9;
+        }
+        #img-left{
+            max-width: 18%;
+            max-height: 18%;
+            margin-left: 0%;
+            margin-top: -13%;
+            text-align : left;
+            position: relative;
+
+        }
+        #img-right{
+            max-width: 18%;
+            max-height: 18%;
+            margin-right: 3%;
+            margin-top: -13%;
+            position: relative;
+        }
+        .jumbotron {
+            padding: 100px;
+            font-family: 'Lato', sans-serif;
+            position: relative;
+            /* text-align: center; */
+            background-color: #fdf5ef;
+            margin-bottom: 0px;
+            width: 100%;
+        }
+        .jumbotron-text{
+            margin-right: 15%;
+            text-align:center;
+        }
+        .main-container {
+            padding: 50px 0px;
+            margin: 0%;
+            width: 100%;
+            display: inline-block;
+            text-align: center;
+        }
+        .display-5{
+            margin-left: 18%;
+        }
+        .card {
+            margin: 1% 0%;
+            position: relative;
+            display: inline-block;
+            border: 3px solid black;
+            border-radius: 50px;
+        }
+        .card-body {
+            background-color: white;
+            border-radius: 50px;
+            text-align: center;
+        }
+        .cardheader {
+            margin: 10px;
+            height: 100%;
+            border-radius: 20px;
+        }
+
+        .card-img-top {
+            padding: 30px;
+            border-radius: 50px;
+            height: 175px;
+        }
+        .nav-item:hover {
+            border-bottom: 3px solid black;
+            /* box-shadow: 0px 2px grey; */
+        }
+    </style>
+  </head>
+  <body>
+    
+    <!-- Navbar design -->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #348fd9; border-bottom: 1px solid black;" >
+        <a class="navbar-brand" href="https://www.dtu.ac.in"><img src="../homepage/images/dtu_logo.png" style="height: 50px;"></a> 
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+            <a class="nav-link" href="/homepage"> Home </a>
+            </li>
+            <li class="nav-item active">
+            <a class="nav-link" href="/bookappointment"> Book Appointment </a>
+            </li>
+            <li class="nav-item active">
+            <a class="nav-link" href="/viewappointments">View Appointments</a>
+            </li>
+            <li class="nav-item active">
+            <a class="nav-link" href="/medicaltips"> Medical Tips </a>
+            </li> 
+            <li class="nav-item active">
+              <a class="nav-link" href="/store"> Medicine Store </a>
+              </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/profile"> Profile </a>
+            </li>  
+        </ul>
+            <button id="demo" class="btn btn-dark" type="submit">Logout</button>  
+        </div>
+    </nav>
+    
+    <!-- Jumbotron -->
+    <div class="jumbotron">
+        
+            <div class="jumbotron-text"> 
+                <h1 class="display-5">MOBINURSE</h1>
+                <p class="display-5 lead" style="margin-bottom: 0px;">Online Medical Consultation and Delivery System</p>
+                <p class="display-5" style="margin-top: 0px;">(24/7 Consultation)</p>
+            </div>
+            <img id = "img-left" align = "left" src = 'images/face-mask.png'>
+        <img id = "img-right" align = "right" src = 'images/doctor.png'>
+    </div>
+    <div class="main-container">
+        <div class="card" style="width: 15rem;">
+            <div class="cardheader" >
+            <img class="card-img-top" src="images/booking.png" alt="Card image cap">
+            </div>
+            <div class="card-body">
+            <a href="/bookappointment" class="btn btn-secondary btn-lg">Book Appointment</a>
+            </div>
+        </div>
+        <div class="card" style="width: 15rem;">
+            <div class="cardheader">
+            <img class="card-img-top" src="images/appointments.png" alt="Card image cap">
+            </div>
+            <div class="card-body">
+            <a href="/viewappointments" class="btn btn-secondary btn-lg">Your Appointments</a>
+            </div>
+        </div>
+        <div class="card" style="width: 15rem;">
+            <div class="cardheader">
+            <img class="card-img-top" src="images/medicaltips.png" alt="Card image cap">
+            </div>
+            <div class="card-body">
+            <a href="/medicaltips" class="btn btn-secondary btn-lg">Medical Tips</a>
+            </div>
+        </div>
+        <div class="card" style="width: 15rem;">
+            <div class="cardheader">
+            <img class="card-img-top" src="images/medicine.png" alt="Card image cap">
+            </div>
+            <div class="card-body">
+            <a href="/store" class="btn btn-secondary btn-lg">Medicine Store</a>
+            </div>
+        </div>
+        
+        <div class="card" style="width: 15rem;">
+            <div class="cardheader">
+            <img class="card-img-top" src="images/profile.png" alt="Card image cap">
+            </div>
+            <div class="card-body">
+            <a href="/profile" class="btn btn-secondary btn-lg">Patient Profile</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- script -->
+    <script>
+        var x = document.getElementById("demo").addEventListener('click',myFunction);
+            function myFunction(){
+    
+                location.href = '/logout';
+            }
+    
+        </script>
+    
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
