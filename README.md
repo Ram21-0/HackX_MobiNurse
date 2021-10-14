@@ -35,7 +35,7 @@ npm i
 node app.js
 ```
 
-For Named Entity Recognition model & Videocall
+For Named Entity Recognition model & Video call
 ```
 cd Artificial\ Intelligence\ and\ Video\ Call
 npm i
